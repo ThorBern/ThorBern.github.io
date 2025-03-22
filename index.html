@@ -3,32 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Æsc - Coming Soon</title>
+  <title>Æsc</title>
+  <!-- Optional: If you need a webfont for Garamond:
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&display=swap" />
+  -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Video Background Container -->
+  <!-- Fullscreen Video Container -->
   <div class="video-container">
-    <video autoplay muted loop playsinline id="bg-video">
+    <video 
+      id="bg-video" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+    >
       <source src="video/ash-tree-timelapse.mp4" type="video/mp4" />
-      <!-- Fallback for browsers that do not support the <video> tag -->
       Your browser does not support the video tag.
     </video>
   </div>
-  
-  <!-- Overlay Content -->
-  <div class="overlay">
-    <div class="brand-logo">
-      <!-- Replace with your logo (as an <img> or <svg>) if desired -->
-      <h1 class="main-logo">Æ</h1>
-    </div>
-    <h2 class="tagline">Æsc - Stealth Mode</h2>
-    <p class="coming-soon-text">Something new is on the way...</p>
-    <!-- Optional: Email capture or “Notify Me” button -->
-    <button class="notify-btn" onclick="notifyUser()">Notify Me</button>
-  </div>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
+  <!-- Centered Text -->
+  <div class="centered-text">
+    <h1 class="brand">Æsc</h1>
+  </div>
 </body>
 </html>
