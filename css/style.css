@@ -1,0 +1,83 @@
+/* Reset or basic normalization */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Full-width and full-height for the body */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Keep page at a single screen for a minimal landing page look */
+}
+
+/* Container for the background video */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensure the video stays behind overlay content */
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers entire background */
+}
+
+/* Overlay where we place text, logo, etc. */
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #fff; /* White text on dark video background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3); /* Subtle dark overlay to enhance contrast */
+}
+
+/* Main brand logo */
+.main-logo {
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  /* For a minimal style reminiscent of Aman, consider a refined font (e.g. a thin, clean typeface) */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Tagline text */
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitle or coming soon text */
+.coming-soon-text {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Notify button (optional) */
+.notify-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notify-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
