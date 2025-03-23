@@ -36,28 +36,23 @@ html, body {
   object-fit: cover; /* fill entire container without distortion */
 }
 
-/* 
-  Remove the centered text container 
-  if it’s no longer needed 
-  (or leave it empty)
+/*
+  REMOVE existing text by hiding centered-text
 */
 .centered-text {
-  /* If you want to completely remove it, 
-     you can delete this entire rule or 
-     set display: none. */
-  display: none; 
+  display: none; /* This removes the original text block */
 }
 
 /*
-  Large white Æsc in EB Garamond at the lower left
+  Æsc styling - fix units & ensure large text in EB Garamond
 */
 .brand {
-  position: absolute;
-  bottom: 10px;    /* adjust as needed */
-  left: 10px;      /* adjust as needed */
   color: #fff;
-  font-family: 'EB Garamond', serif;
-  font-size: 20vw; /* scales with viewport width */
+  position: absolute;
+  bottom: 90px;          /* FIXED: added px (or use another unit) */
+  left: 10px;            /* adjust as you see fit */
+  font-family: 'EB Garamond', serif; /* or "EB Garamond", depending on your setup */
+  font-size: 20vw;       /* scales with viewport width for responsiveness */
   font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 1;
