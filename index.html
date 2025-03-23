@@ -75,6 +75,20 @@
   src="https://bandcamp.com/EmbeddedPlayer/album=1717617922/size=small/bgcol=ffffff/linkcol=333333/track=1264650700/transparent=true/auto_play=true/"
   seamless>
 </iframe>
+<script>
+  // Grab references
+  const brandEl = document.querySelector('.brand');
+  const bcPlayer = document.getElementById('bc-player');
+
+  // Toggle display of the Bandcamp iframe on click
+  brandEl.addEventListener('click', () => {
+    if (bcPlayer.style.display === 'none') {
+      bcPlayer.style.display = 'block'; // show the iframe
+    } else {
+      bcPlayer.style.display = 'none';  // hide it again if clicked twice
+    }
+  });
+</script>
 
 </body>
 </html>
