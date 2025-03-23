@@ -37,22 +37,22 @@ html, body {
 }
 
 /*
-  REMOVE existing text by hiding centered-text
+  Hide any old text
 */
 .centered-text {
-  display: none; /* This removes the original text block */
+  display: none; /* This removes the original text block from view */
 }
 
 /*
-  Æsc styling - fix units & ensure large text in EB Garamond
+  Large white “Æsc” in EB Garamond at the lower-left
 */
 .brand {
   color: #fff;
   position: absolute;
-  bottom: 90px;          /* Use a valid unit (e.g., px) */
+  bottom: 90px; /* Add px or another unit */
   left: 10px;
-  font-family: 'EB Garamond', serif; /* Make sure EB Garamond is loaded in your HTML <head> */
-  font-size: 20vw;       /* scales with viewport width for responsiveness */
+  font-family: 'EB Garamond', serif; 
+  font-size: 20vw; /* scales with viewport width for responsiveness */
   font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 1;
