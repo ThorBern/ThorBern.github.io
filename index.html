@@ -6,15 +6,66 @@
 <head>
   <meta charset="UTF-8" />
   <title>Fullscreen Background</title>
-  <!-- If needed, include EB Garamond via a webfont, for instance: -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" /> -->
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- EB Garamond webfont -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Minimal reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Use the entire viewport */
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* no scrolling, purely fullscreen */
+      background: #000; /* fallback color in case video doesn't load */
+    }
+
+    /* Container for the looping video */
+    .video-container {
+      position: fixed; /* ensures it's always at the back, covering screen */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* content goes above the video */
+      overflow: hidden;
+    }
+
+    #bg-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* fill entire container without distortion */
+    }
+
+    /* Large white “Æsc” in EB Garamond at the lower-left */
+    .brand {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: #fff;
+      font-family: 'EB Garamond', serif;
+      font-size: 20vw; /* scales with viewport width */
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+  </style>
 </head>
 <body>
+
   <div class="video-container">
     <video id="bg-video" autoplay muted loop>
-      <source src="background-video.mp4" type="video/mp4" />
-      <!-- Fallback text if video doesn't load -->
+      <!-- Keep the exact filename and fallback text you had before -->
+      <source src="AESC BG SPW loop 2 1080P - Apple ProRes 422 LT (HQ).mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
@@ -22,10 +73,7 @@
   <!-- Large white Æsc in EB Garamond -->
   <div class="brand">Æsc</div>
 
-  <!-- Optional: Remove this if you don't need it anymore 
-  <div class="centered-text">
-    <p>Some other content here if desired</p>
-  </div> -->
-
 </body>
 </html>
+
+
