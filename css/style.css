@@ -53,14 +53,14 @@ html, body {
 */
 .brand {
   color: #fff;
-    font-size: 30
+    font-size: 100
   position: absolute;
-  bottom: 10px;
+  bottom: 90;
   left: 10px;
   /* If you have a Garamond webfont: 
      font-family: 'EB Garamond', serif; */
   font-family: "Garamond", serif;
-  font-size: 10vw; /* scales with viewport width for responsiveness */
+  font-size: 20vw; /* scales with viewport width for responsiveness */
   font-weight: 400;
   letter-spacing: 0.03em;
 }
