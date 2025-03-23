@@ -2,79 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  
-  <!-- TAB TITLE IS JUST "æ" -->
   <title>æ</title>
 
-  <!-- EB Garamond via Google Fonts -->
+  <!-- EB Garamond (for the "Æsc" text) -->
   <link
     href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap"
     rel="stylesheet"
   />
 
   <style>
-    /* 
-      1) MINIMAL RESET
-    */
+    /* 1) RESET */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* 
-      2) FULLSCREEN USAGE
-         - No scrolling, fullscreen black fallback
-    */
+    /* 2) FULLSCREEN PAGE */
     html, body {
       width: 100%;
       height: 100%;
-      overflow: hidden;
-      background: #000;
+      overflow: hidden; /* no scroll, purely fullscreen */
+      background: #000; /* black fallback if video fails */
     }
 
-    /* 
-      3) VIDEO CONTAINER
-         - Fixed to the viewport, behind everything else
-         - z-index: -1 so .brand can sit above it
-    */
+    /* 3) FULLSCREEN VIDEO CONTAINER */
     .video-container {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: -1;  /* ensures video is behind everything else */
       overflow: hidden;
     }
 
-    /*
-      4) THE VIDEO 
-         - "ash-tree-loop.mp4" 
-         - object-fit: cover fills container without distortion
-    */
-    #bg-video {
+    video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover;  /* fill container without distortion */
     }
 
-    /*
-      5) LARGE WHITE “Æsc” ON TOP OF VIDEO
-         - position: absolute, bottom-left
-         - z-index: 1 => ensures it appears ON TOP OF the video
-         - EB Garamond from Google Fonts
-         - font-size: 20vw => makes the text BIG and scales with viewport width
-         - color: #fff => ensures text is white
-    */
+    /* 4) LARGE WHITE "Æsc" ON TOP */
     .brand {
       position: absolute;
-      bottom: 10px;
+      bottom: 10px;   /* lower-left corner */
       left: 10px;
-      z-index: 1;  /* THIS LINE ensures it's above the -1 container */
-      color: #fff;
+      z-index: 1;     /* above the video container */
+      color: #fff;    /* white text */
       font-family: 'EB Garamond', serif;
-      font-size: 20vw;
+      font-size: 20vw;  /* very large, scales with viewport width */
       font-weight: 400;
       letter-spacing: 0.03em;
       line-height: 1;
@@ -83,26 +60,16 @@
 </head>
 <body>
 
-  <!-- 
-    6) FULLSCREEN VIDEO CONTAINER 
-       - No fallback text in <video> so it never shows black text
-  -->
+  <!-- 5) FULLSCREEN VIDEO -->
   <div class="video-container">
-    <video id="bg-video" autoplay muted loop playsinline>
-      <!-- 
-        MAKE SURE the file "ash-tree-loop.mp4" 
-        is in the SAME FOLDER as this HTML file
-      -->
+    <video autoplay muted loop playsinline>
+      <!-- Make sure "ash-tree-loop.mp4" is in this same folder -->
       <source src="ash-tree-loop.mp4" type="video/mp4" />
-      <!-- No fallback text here, so nothing appears if video fails -->
+      <!-- We leave fallback text blank so absolutely no text appears if video can't load -->
     </video>
   </div>
 
-  <!-- 
-    7) LARGE WHITE “Æsc”
-       - Will appear ON TOP OF the video at bottom-left
-       - Because .brand has z-index: 1 
-  -->
+  <!-- 6) LARGE WHITE “Æsc” (NO CHANCE OF BLACK TEXT) -->
   <div class="brand">Æsc</div>
 
 </body>
