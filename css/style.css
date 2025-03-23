@@ -9,42 +9,36 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden; /* no scrolling, purely fullscreen */
-  background: #000; /* fallback color if video doesn't load */
+  overflow: hidden; /* No scrolling, purely fullscreen */
+  background: #000; /* Fallback color */
 }
 
 /* Container for the looping video */
 .video-container {
-  position: fixed; /* ensures it's always at the back, covering the screen */
+  position: fixed; /* Always at the back, covering screen */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* content sits above the video */
+  z-index: -1; /* Content sits above the video */
   overflow: hidden;
 }
 
 #bg-video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fill container without distortion */
-}
-
-/* Hide the old text block */
-.centered-text {
-  display: none; 
+  object-fit: cover; /* Fill container without distortion */
 }
 
 /* Large white “Æsc” in EB Garamond at the lower-left */
 .brand {
   position: absolute;
-  bottom: 90px; /* add px to ensure valid units */
+  bottom: 10px;
   left: 10px;
   color: #fff;
-  font-family: 'EB Garamond', serif; /* loaded via Google Fonts in the HTML <head> */
-  font-size: 20vw; /* scales with viewport width for responsiveness */
+  font-family: 'EB Garamond', serif;
+  font-size: 20vw; /* Scales with viewport width */
   font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 1;
 }
-
