@@ -4,91 +4,48 @@
   <meta charset="UTF-8" />
   <title>æ</title>
 
+  <!-- Link to our external CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+
   <!-- EB Garamond for the “Æsc” text -->
   <link
     href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap"
     rel="stylesheet"
   />
-
-  <style>
-    /* Reset and fullscreen usage */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background: #000; /* fallback color if video fails */
-      overflow: hidden; /* no scrolling, purely fullscreen */
-    }
-
-    /* Fullscreen video container */
-    .video-container {
-      position: fixed; 
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0; /* No negative index, so it won’t go behind <body> */
-      overflow: hidden;
-    }
-
-    /* The video fills the container without distortion */
-    .video-container video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Large white “Æsc” on top of the video */
-    .brand {
-      position: fixed; 
-      bottom: 10px; 
-      left: 10px;
-      z-index: 1; /* Ensures it's above the video container */
-      color: #fff;
-      font-family: 'EB Garamond', serif;
-      font-size: 20vw; /* Very large, scales with viewport width */
-      line-height: 1;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Fullscreen video -->
+  <!-- Fullscreen video container -->
   <div class="video-container">
-    <video autoplay muted loop playsinline>
-      <!-- Make sure this file name matches exactly (case-sensitive) -->
+    <video id="bg-video" autoplay muted loop playsinline>
+      <!-- The video file must match exactly, e.g. "ash-tree-loop.mp4" -->
       <source src="ash-tree-loop.mp4" type="video/mp4" />
-      <!-- No fallback text => no unwanted black text if video fails -->
     </video>
   </div>
 
-  <!-- Large white “Æsc” at bottom-left -->
-  <div class="brand">Æsc</div>
-<!-- 
-  Hidden Bandcamp iframe 
-  (update the src if you have a different embed link or auto_play settings)
--->
-<iframe 
-  id="bc-player"
-  style="display: none; width: 1px; height: 1px; border: none;"
-  src="https://bandcamp.com/EmbeddedPlayer/album=1717617922/size=small/bgcol=ffffff/linkcol=333333/track=1264650700/transparent=true/auto_play=true/"
-  seamless>
-</iframe>
-<script>
-  // Grab references
-  const brandEl = document.querySelector('.brand');
-  const bcPlayer = document.getElementById('bc-player');
+  <!-- Large, white “Æsc” at bottom-left -->
+  <div class="brand" id="brand">Æsc</div>
 
-  // Toggle display of the Bandcamp iframe on click
-  brandEl.addEventListener('click', () => {
-    if (bcPlayer.style.display === 'none') {
-      bcPlayer.style.display = 'block'; // show the iframe
-    } else {
-      bcPlayer.style.display = 'none';  // hide it again if clicked twice
-    }
-  });
-</script>
+  <!-- Hidden Bandcamp iframe (update the src with your exact embed) -->
+  <iframe 
+    id="bc-player"
+    style="display: none; width: 1px; height: 1px; border: none;"
+    src="https://bandcamp.com/EmbeddedPlayer/album=1717617922/size=small/bgcol=ffffff/linkcol=333333/track=1264650700/transparent=true/auto_play=true/"
+    seamless>
+  </iframe>
 
+  <!-- Simple script to toggle the Bandcamp iframe on click -->
+  <script>
+    const brandEl = document.getElementById('brand');
+    const bcPlayer = document.getElementById('bc-player');
+
+    brandEl.addEventListener('click', () => {
+      if (bcPlayer.style.display === 'none') {
+        bcPlayer.style.display = 'block';
+      } else {
+        bcPlayer.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
