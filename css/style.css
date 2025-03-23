@@ -20,7 +20,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* behind the text (Æsc) */
+  z-index: 0; /* behind “Æsc” */
   overflow: hidden;
 }
 
@@ -30,15 +30,16 @@ html, body {
   object-fit: cover; /* fills container without distortion */
 }
 
-/* Large white “Æsc” in EB Garamond */
+/* Large white “Æsc” in EB Garamond, always on top */
 .brand {
   position: fixed;
   bottom: 10px;
   left: 10px;
-  z-index: 1; /* on top of the video */
+  /* Use a very high z-index to ensure it's never hidden */
+  z-index: 9999;
   color: #fff;
   font-family: 'EB Garamond', serif;
   font-size: 20vw; /* Very large, scales with viewport width */
   line-height: 1;
-  cursor: pointer; /* shows pointer on hover */
+  cursor: pointer; /* pointer on hover */
 }
