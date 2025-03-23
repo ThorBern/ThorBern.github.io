@@ -1,27 +1,21 @@
-/* 
-  Minimal reset 
-*/
+/* Minimal reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 
-  Use the entire viewport
-*/
+/* Fullscreen usage */
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Prevent scrolling, purely fullscreen */
-  background: #000; /* Fallback color if video doesn't load */
+  overflow: hidden; /* No scrolling, purely fullscreen */
+  background: #000; /* Fallback color if the video doesn't load */
 }
 
-/*
-  Container for the looping video
-*/
+/* Container for the looping video */
 .video-container {
-  position: fixed; /* Stays at the back, covering the screen */
+  position: fixed; /* Always at the back, covering screen */
   top: 0;
   left: 0;
   width: 100%;
@@ -36,16 +30,14 @@ html, body {
   object-fit: cover; /* Fill container without distortion */
 }
 
-/*
-  Large white “Æsc” in EB Garamond at bottom-left
-*/
+/* Large white “Æsc” in EB Garamond at the lower-left */
 .brand {
   position: absolute;
-  bottom: 10px; /* Adjust as needed */
-  left: 10px;   /* Adjust as needed */
+  bottom: 10px;
+  left: 10px;
   color: #fff;
   font-family: 'EB Garamond', serif;
-  font-size: 20vw;  /* Scales with viewport width */
+  font-size: 20vw;   /* Scales with viewport width for a large display */
   font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 1;
