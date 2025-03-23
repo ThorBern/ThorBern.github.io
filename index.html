@@ -2,31 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Æsc</title>
-  <!-- Optional: If you need a webfont for Garamond:
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&display=swap" />
-  -->
-  <link rel="stylesheet" href="style.css" />
+  <title>Fullscreen Background</title>
+  <!-- If needed, include EB Garamond via a webfont, for instance: -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Fullscreen Video Container -->
   <div class="video-container">
-    <video 
-      id="bg-video" 
-      autoplay 
-      muted 
-      loop 
-      playsinline
-    >
-<source src="ash-tree-loop.mp4">
+    <video id="bg-video" autoplay muted loop>
+      <source src="background-video.mp4" type="video/mp4" />
+      <!-- Fallback text if video doesn't load -->
       Your browser does not support the video tag.
     </video>
   </div>
 
-  <!-- Centered Text -->
+  <!-- Large white Æsc in EB Garamond -->
+  <div class="brand">Æsc</div>
+
+  <!-- Optional: Remove this if you don't need it anymore 
   <div class="centered-text">
-    <h1 class="brand">Æsc</h1>
-  </div>
+    <p>Some other content here if desired</p>
+  </div> -->
+
 </body>
 </html>
