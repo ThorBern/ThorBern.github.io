@@ -36,31 +36,29 @@ html, body {
   object-fit: cover; /* fill entire container without distortion */
 }
 
-/*
-  Centered text block
+/* 
+  Remove the centered text container 
+  if it’s no longer needed 
+  (or leave it empty)
 */
 .centered-text {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center; /* positions the text perfectly in center */
+  /* If you want to completely remove it, 
+     you can delete this entire rule or 
+     set display: none. */
+  display: none; 
 }
 
 /*
-  Æsc styling
+  Large white Æsc in EB Garamond at the lower left
 */
 .brand {
-  color: #fff;
-    font-size:30
   position: absolute;
-  bottom: 90;
-  left: 10px;
-  /* If you have a Garamond webfont: 
-     font-family: 'EB Garamond', serif; */
-  font-family: "Garamond", serif;
-  font-size: 20vw; /* scales with viewport width for responsiveness */
+  bottom: 10px;    /* adjust as needed */
+  left: 10px;      /* adjust as needed */
+  color: #fff;
+  font-family: 'EB Garamond', serif;
+  font-size: 20vw; /* scales with viewport width */
   font-weight: 400;
   letter-spacing: 0.03em;
+  line-height: 1;
 }
