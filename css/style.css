@@ -53,6 +53,10 @@ html, body {
 */
 .brand {
   color: #fff;
+    font-size: 2em;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   /* If you have a Garamond webfont: 
      font-family: 'EB Garamond', serif; */
   font-family: "Garamond", serif;
