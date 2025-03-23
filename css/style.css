@@ -49,9 +49,9 @@ html, body {
 .brand {
   color: #fff;
   position: absolute;
-  bottom: 90px;          /* FIXED: added px (or use another unit) */
-  left: 10px;            /* adjust as you see fit */
-  font-family: 'EB Garamond', serif; /* or "EB Garamond", depending on your setup */
+  bottom: 90px;          /* Use a valid unit (e.g., px) */
+  left: 10px;
+  font-family: 'EB Garamond', serif; /* Make sure EB Garamond is loaded in your HTML <head> */
   font-size: 20vw;       /* scales with viewport width for responsiveness */
   font-weight: 400;
   letter-spacing: 0.03em;
