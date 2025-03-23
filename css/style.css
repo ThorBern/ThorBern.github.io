@@ -1,59 +1,50 @@
-/* 
-  Minimal reset 
-*/
+/* Minimal reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 
-  Use the entire viewport
-*/
+/* Fullscreen usage */
 html, body {
   width: 100%;
   height: 100%;
   overflow: hidden; /* no scrolling, purely fullscreen */
-  background: #000; /* fallback color in case video doesn't load */
+  background: #000; /* fallback color if video doesn't load */
 }
 
-/*
-  Container for the looping video
-*/
+/* Container for the looping video */
 .video-container {
-  position: fixed; /* ensures it's always at the back, covering screen */
+  position: fixed; /* ensures it's always at the back, covering the screen */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* content goes above the video */
+  z-index: -1; /* content sits above the video */
   overflow: hidden;
 }
 
 #bg-video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fill entire container without distortion */
+  object-fit: cover; /* fill container without distortion */
 }
 
-/*
-  Hide any old text
-*/
+/* Hide the old text block */
 .centered-text {
-  display: none; /* This removes the original text block from view */
+  display: none; 
 }
 
-/*
-  Large white “Æsc” in EB Garamond at the lower-left
-*/
+/* Large white “Æsc” in EB Garamond at the lower-left */
 .brand {
-  color: #fff;
   position: absolute;
-  bottom: 90px; /* Add px or another unit */
+  bottom: 90px; /* add px to ensure valid units */
   left: 10px;
-  font-family: 'EB Garamond', serif; 
+  color: #fff;
+  font-family: 'EB Garamond', serif; /* loaded via Google Fonts in the HTML <head> */
   font-size: 20vw; /* scales with viewport width for responsiveness */
   font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 1;
 }
+
